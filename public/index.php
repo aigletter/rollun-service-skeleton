@@ -4,7 +4,7 @@
  * @license LICENSE.md New BSD License
  */
 
-declare(strict_types=1);
+//declare(strict_types=1);
 
 use Jaeger\Span\Context\SpanContext;
 use Jaeger\Tag\StringTag;
@@ -16,7 +16,8 @@ use Zend\Expressive\Application;
 use Zend\Expressive\MiddlewareFactory;
 use Zend\ServiceManager\ServiceManager;
 
-error_reporting(E_ALL ^ E_USER_DEPRECATED);
+//error_reporting(E_ALL ^ E_USER_DEPRECATED);
+error_reporting(E_ERROR | E_WARNING | E_PARSE); //E_ALL ^ E_USER_DEPRECATED
 
 // Delegate static file requests back to the PHP built-in webserver
 if (PHP_SAPI === 'cli-server' && $_SERVER['SCRIPT_FILENAME'] !== __FILE__) {

@@ -57,6 +57,12 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     );
 
     $app->get(
+        '/memory',
+        App\Handler\DataStroreHandler::class,
+        'memory-page'
+    );
+
+    $app->get(
         '/oauth/redirect',
         RedirectMiddleware::class,
         'oauth-redirect'
